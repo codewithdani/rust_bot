@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: telegram-course-bot
+    env: rust
+    repo: YOUR_GITHUB_REPOSITORY  # Replace with your GitHub repo
+    buildCommand: cargo build --release
+    startCommand: ./target/release/telegram_course_bot
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        value: YOUR_TELEGRAM_BOT_TOKEN
+      - key: SUPABASE_URL
+        value: YOUR_SUPABASE_URL
+      - key: SUPABASE_API_KEY
+        value: YOUR_SUPABASE_API_KEY
+      - key: DATABASE_URL  #For the postgres connection string.  Example: postgres://user:password@host:port/database
+        value: YOUR_POSTGRES_CONNECTION_STRING
